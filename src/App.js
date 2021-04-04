@@ -1,24 +1,35 @@
-import logo from './logo.svg';
+import WeatherContainer from './containers/WeatherContainer';
 import './App.css';
-
+import './index.css';
+import {Container} from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import CitySelector from './components/CitySelector';
+import UseFetch from './hooks/UseFetch';
+import WeatherList from './components/WeatherList';
+import FivedayContainer from './containers/FivedayContainer';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import Navbar from './Navbar';
 function App() {
+ 
+  //const {data, error, isLoading, setUrl} = UseFetch();
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navbar />
+    <Container className="App">
+      
+    <Switch>
+      <Route exact path="/">
+      <WeatherContainer />
+      </Route>
+      <Route path="/fivedaysweather">
+      <FivedayContainer />
+      </Route>
+    </Switch>
+  
+    
+    </Container>
+    </Router>
   );
 }
 
