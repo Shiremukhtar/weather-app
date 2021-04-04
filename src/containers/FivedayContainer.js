@@ -17,7 +17,8 @@ const FivedayContainer = () => {
                     const temperary = {name: data.city.name,date: data.list[i].dt_txt,
                                         icon: data.list[i].weather[0].icon,
                                         maxTemp: data.list[i].main.temp_max,
-                                        minTemp: data.list[i].main.temp_min}
+                                        minTemp: data.list[i].main.temp_min,
+                                        main: data.list[i].weather[0].main}
                                         cityForecast.push(temperary)
                     console.log(cityForecast);
                 }
