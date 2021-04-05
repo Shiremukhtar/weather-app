@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import WeatherSearch from '../components/WeatherSearch'
 import WeatherPresantation from '../components/WeatherPresentation';
 import CitySelector from '../components/CitySelector';
 
