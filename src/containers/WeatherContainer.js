@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react'
 import WeatherSearch from '../components/WeatherSearch'
 import WeatherPresantation from '../components/WeatherPresentation';
+import CitySelector from '../components/CitySelector';
 
 
 const WeatherContainer = () => {
     const [resultList, setResultList] = useState({name: '', dt: '', main: [], weather: []});
     const apiKey ='ed8ca45136834a2b86135a7e6ea7ef0e&units=metric';
+
     const search = (searchValue) => {
         const url = 'https://api.openweathermap.org/data/2.5/weather?q='+searchValue+'&appid=' + apiKey;
         fetch(url)
@@ -29,7 +31,7 @@ const WeatherContainer = () => {
 
     return (
         <>
-            <WeatherSearch search={search}/>
+            <CitySelector onSearch={search}/>
            <WeatherPresantation list={resultList}/>
            
           
