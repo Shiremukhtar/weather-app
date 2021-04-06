@@ -26,9 +26,9 @@ return a;}
         <div className="card-body text-center">
             <img className="weather-icon" src={iconUrl} />
             <h1>{list.name}</h1>
-            <p className="h2">{list.main.temp}&deg;C</p>
+            <p className="h2">{Math.round(list.main.temp)}&deg;C</p>
             <div className="row mt-4">
-                {minmaxTemp(list.main.temp_min, list.main.temp_max)}
+                {minmaxTemp(Math.round(list.main.temp_min), Math.round(list.main.temp_max))}
                 <div className="col-md-6">
                 <p>
                     {' '}
